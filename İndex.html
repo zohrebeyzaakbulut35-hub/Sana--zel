@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>One Last Thing...</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#0f0f0f;
+color:white;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+overflow:hidden;
+}
+
+.card{
+width:90%;
+max-width:400px;
+background:#1b1b1b;
+padding:30px;
+border-radius:25px;
+text-align:center;
+box-shadow:0 0 25px rgba(255,255,255,.08);
+animation:fade 1s;
+}
+
+h1{
+font-size:34px;
+margin-bottom:20px;
+}
+
+p{
+opacity:.8;
+line-height:1.8;
+}
+
+button{
+margin-top:25px;
+padding:15px 35px;
+border:none;
+border-radius:40px;
+background:white;
+color:black;
+font-size:17px;
+cursor:pointer;
+}
+
+input{
+width:90%;
+padding:15px;
+margin-top:20px;
+font-size:18px;
+border:none;
+border-radius:15px;
+text-align:center;
+}
+
+.hidden{
+display:none;
+}
+
+#error{
+color:#ff8a8a;
+margin-top:15px;
+}
+
+@keyframes fade{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+</style>
+
+</head>
+<body>
+
+<div class="card">
+
+<div id="welcome">
+
+<h1>Merhaba Eren.</h1>
+
+<p>
+Bu sayfayı hazırlamamın tek bir sebebi var.
+<br><br>
+Lütfen sonuna kadar oku.
+</p>
+
+<button onclick="goPassword()">
+Devam Et 🤍
+</button>
+
+</div>
+
+<div id="password" class="hidden">
+
+<h1>🔒</h1>
+
+<p>Şifreyi Gir</p>
+
+<input
+id="pass"
+type="password"
+placeholder="0404">
+
+<button onclick="login()">
+Aç
+</button>
+
+<p id="error"></p>
+
+</div>
+
+<div id="letter" class="hidden">
+
+<h1>🤍</h1>
+
+<p>
+
+Önce bunu dinle.
+
+<br><br>
+
+<a
+href="https://open.spotify.com/search/%C4%B0nat%20Kad%C4%B1n"
+target="_blank"
+style="color:white;">
+🎵 Adamlar - İnat Kadın
+</a>
+
+<br><br><br>
+
+Eren...
+
+<br><br>
+
+Bu siteyi seni zorlamak için hazırlamadım.
+
+Sadece seni kırdığım için gerçekten özür dilemek istedim.
+
+Haklı olduğumu kanıtlamaya çalışmıyorum.
+
+Sadece seni üzdüğüm için üzgünüm.
+
+Beni affedip affetmemek tamamen senin kararın.
+
+Ama seni ne kadar sevdiğimi bilmeni istiyorum.
+
+🤍
+
+</p>
+
+</div>
+
+</div>
+
+<script>
+
+function goPassword(){
+
+document.getElementById("welcome").classList.add("hidden");
+document.getElementById("password").classList.remove("hidden");
+
+}
+
+function login(){
+
+let password=document.getElementById("pass").value;
+
+if(password=="0404"){
+
+document.getElementById("password").classList.add("hidden");
+document.getElementById("letter").classList.remove("hidden");
+
+}else{
+
+document.getElementById("error").innerHTML="Yanlış şifre.";
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
